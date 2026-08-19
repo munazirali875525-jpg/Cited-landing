@@ -62,10 +62,11 @@ export default function Home() {
         </h2>
 
         {/* Subheadline */}
-        <p className="text-lg text-slate-400 max-w-2xl mx-auto mb-12">
+               <p className="text-lg text-slate-400 max-w-2xl mx-auto mb-12">
           AI search is stealing your traffic. I'll manually audit how Perplexity,
-          ChatGPT, and Claude see your brand, and send you 3 exact steps to fix it.
-        </p>
+          ChatGPT, Claude, and Gemini see your brand, and send you 3 exact steps to fix it.
+        </p> 
+    
 
         {/* Value Props - Modern Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-16">
