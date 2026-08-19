@@ -105,7 +105,7 @@ export default function Home() {
           <div className="relative bg-slate-900/80 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden">
             <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 p-8 text-center border-b border-white/10">
               <h3 className="text-2xl font-bold mb-2">Get your free AI visibility audit</h3>
-              <p className="text-slate-400">I'll send your custom audit in 48 hours.</p>
+              <p className="text-slate-400">I'll send your personalized audit within 24 hours.</p>
             </div>
             <div className="p-4">
               <iframe
