@@ -13,7 +13,7 @@ export default function Home() {
     {
       question: "What's the catch?",
       answer:
-        "AI visibility is an emerging channel most brands are ignoring. I offer 5 free audits weekly to demonstrate the opportunity cost. You get a detailed report showing exactly where you're losing AI-driven traffic. No strings attached.",
+        "AI visibility is an emerging channel most brands are ignoring. I offer 5 free audits weekly to demonstrate the opportunity cost. You get an AI-powered report with human-verified insights showing exactly where you're losing AI-driven traffic. No strings attached.",
     },
     {
       question: "How is this different from my current SEO?",
@@ -63,7 +63,7 @@ export default function Home() {
 
         {/* Subheadline */}
         <p className="text-lg md:text-xl text-neutral-600 max-w-2xl mx-auto mb-10 leading-relaxed">
-          Most Shopify brands lose 20-40% of potential traffic to AI search. Get a custom report showing exactly where you're invisible to Perplexity, ChatGPT, Claude, and Gemini.
+          Most Shopify brands lose 20-40% of potential traffic to AI search. We run your brand through 4 AI engines and deliver a custom report with 3 exact fixes.
         </p>
 
         {/* CTA Button */}
@@ -114,9 +114,10 @@ export default function Home() {
         <div className="bg-white rounded-3xl border border-neutral-200 shadow-2xl shadow-black/5 overflow-hidden">
           <div className="p-8 md:p-12 text-center border-b border-neutral-100">
             <h3 className="text-2xl md:text-3xl font-bold mb-3 text-neutral-900">Get your custom AI Visibility Report</h3>
-            <p className="text-neutral-600 mb-6">I'll send your personalized audit report within 24 hours.</p>
-            
-            
+            <p className="text-neutral-600">AI-powered analysis, expert-reviewed within 24 hours.</p>
+          </div>
+          
+          <div className="p-2">
             <iframe
               src="https://tally.so/embed/1AQvzb?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&hideFooter=1"
               loading="lazy"
@@ -142,7 +143,7 @@ export default function Home() {
           </span>
           <span className="flex items-center gap-2">
             <CheckCircle2 className="w-4 h-4 text-green-600" />
-            Manual audit
+            Expert-reviewed
           </span>
         </div>
       </section>
