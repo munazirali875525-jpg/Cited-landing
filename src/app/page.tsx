@@ -1,10 +1,15 @@
 "use client";
 import { useState } from "react";
+import { Bot, Target, Zap, ArrowRight, CheckCircle2, AlertTriangle, Search } from "lucide-react";
 
 export default function Home() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-    const faqs = [
+  const scrollToForm = () => {
+    document.getElementById("audit-form")?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  const faqs = [
     {
       question: "What's the catch?",
       answer:
@@ -13,7 +18,7 @@ export default function Home() {
     {
       question: "How is this different from my current SEO?",
       answer:
-        "SEO helps you rank on Google. But AI search engines like Perplexity and ChatGPT don't use Google's algorithm. They use LLMs (Large Language Models) that synthesize answers from training data. If your brand isn't mentioned in the sources they cite, you're invisible - even if you rank #1 on Google.",
+        "SEO helps you rank on Google. But AI search engines like Perplexity and ChatGPT don't use Google's algorithm. They read the web like a human and pick the best brands to recommend. If your brand isn't in the sources they cite, you're invisible - even if you rank #1 on Google.",
     },
     {
       question: "What if my brand is already visible?",
@@ -23,9 +28,15 @@ export default function Home() {
   ];
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 text-white font-sans">
+    <main className="min-h-screen bg-slate-950 text-white font-sans relative overflow-hidden">
+      {/* Background Grid */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-40 pointer-events-none" />
+      
+      {/* Mesh Gradient */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[600px] bg-gradient-to-br from-blue-600/20 via-purple-600/10 to-transparent blur-3xl rounded-full pointer-events-none" />
+
       {/* Header */}
-      <header className="border-b border-white/10 bg-white/5 backdrop-blur-xl sticky top-0 z-50">
+      <header className="relative border-b border-white/10 bg-slate-950/80 backdrop-blur-xl sticky top-0 z-50">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
           <div className="flex items-center gap-2">
             <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
@@ -40,7 +51,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="max-w-6xl mx-auto px-6 py-20 text-center">
+      <section className="relative max-w-6xl mx-auto px-6 pt-16 pb-12 text-center">
         {/* Badge */}
         <div className="inline-flex items-center gap-2 px-4 py-2 mb-8 text-sm font-medium text-blue-300 bg-blue-500/10 border border-blue-500/20 rounded-full backdrop-blur-sm">
           <span className="relative flex h-2 w-2">
@@ -51,60 +62,67 @@ export default function Home() {
         </div>
 
         {/* Headline */}
-        <h2 className="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
-          <span className="bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent">
-            You rank #1 on Google.
+        <h2 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-6 leading-tight max-w-4xl mx-auto">
+          <span className="bg-gradient-to-r from-white via-blue-100 to-purple-100 bg-clip-text text-transparent">
+            Your competitors are getting recommended by AI.
           </span>
           <br className="hidden md:block" />
           <span className="bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
-            AI doesn't know you exist.
+            You aren't.
           </span>
         </h2>
 
         {/* Subheadline */}
-               <p className="text-lg text-slate-400 max-w-2xl mx-auto mb-12">
-          AI search is stealing your traffic. I'll manually audit how Perplexity,
-          ChatGPT, Claude, and Gemini see your brand, and send you 3 exact steps to fix it.
-        </p> 
-    
+        <p className="text-lg text-slate-400 max-w-2xl mx-auto mb-8">
+          Most Shopify brands lose 20-40% of potential traffic to AI search. Get a custom report showing exactly where you're invisible to Perplexity, ChatGPT, Claude, and Gemini - and the 3 steps to fix it.
+        </p>
 
-        {/* Value Props - Modern Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto mb-16">
+        {/* CTA Button */}
+        <button
+          onClick={scrollToForm}
+          className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-500 hover:to-purple-500 text-white font-semibold rounded-xl shadow-lg shadow-blue-500/25 transition-all duration-300 hover:scale-105 mb-16"
+        >
+          Get my free audit
+          <ArrowRight className="w-5 h-5" />
+        </button>
+
+        {/* Value Props */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
           <div className="group p-6 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm hover:bg-white/10 hover:border-blue-500/30 transition-all duration-300 hover:-translate-y-1">
-            <div className="text-3xl mb-3">🤖</div>
-            <div className="text-blue-400 font-bold mb-2 text-lg">4 AI Models</div>
+            <Bot className="w-8 h-8 text-blue-400 mb-3" />
+            <div className="text-blue-400 font-bold mb-2 text-lg">See which AI engines ignore you</div>
             <p className="text-sm text-slate-400">
-              Exact visibility across Perplexity, ChatGPT, Claude, and Gemini.
+              Find out exactly which AI models (Perplexity, ChatGPT, Claude, Gemini) are failing to recommend your brand.
             </p>
           </div>
           <div className="group p-6 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm hover:bg-white/10 hover:border-purple-500/30 transition-all duration-300 hover:-translate-y-1">
-            <div className="text-3xl mb-3">🎯</div>
+            <Target className="w-8 h-8 text-purple-400 mb-3" />
             <div className="text-purple-400 font-bold mb-2 text-lg">
-              12 High-Intent Queries
+              Discover searches sending customers to rivals
             </div>
             <p className="text-sm text-slate-400">
-              See how AI answers "best [category] brands" and "vs [competitor]".
+              See the exact queries where AI recommends your competitors instead of you.
             </p>
           </div>
           <div className="group p-6 bg-white/5 border border-white/10 rounded-2xl backdrop-blur-sm hover:bg-white/10 hover:border-pink-500/30 transition-all duration-300 hover:-translate-y-1">
-            <div className="text-3xl mb-3">🚀</div>
-            <div className="text-pink-400 font-bold mb-2 text-lg">3 Actionable Fixes</div>
+            <Zap className="w-8 h-8 text-pink-400 mb-3" />
+            <div className="text-pink-400 font-bold mb-2 text-lg">Reclaim your AI traffic in 7 days</div>
             <p className="text-sm text-slate-400">
-              A clear, manual playbook to force AI to recommend your brand.
+              Get a step-by-step playbook to force AI to recommend your brand.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Form Section - Glassmorphism */}
-      <section className="max-w-2xl mx-auto px-6 pb-24">
+      {/* Form Section */}
+      <section id="audit-form" className="relative max-w-2xl mx-auto px-6 py-16">
         <div className="relative">
           {/* Glow effect */}
           <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl blur opacity-30"></div>
           
           <div className="relative bg-slate-900/80 backdrop-blur-xl rounded-3xl border border-white/10 overflow-hidden">
             <div className="bg-gradient-to-r from-blue-600/20 to-purple-600/20 p-8 text-center border-b border-white/10">
-              <h3 className="text-2xl font-bold mb-2">Get your free AI visibility audit</h3>
+              <h3 className="text-2xl font-bold mb-2">Get your custom AI Visibility Report</h3>
               <p className="text-slate-400">I'll send your personalized audit within 24 hours.</p>
             </div>
             <div className="p-4">
@@ -123,30 +141,24 @@ export default function Home() {
           </div>
         </div>
         
-        <div className="flex items-center justify-center gap-6 mt-6 text-sm text-slate-500">
+        <div className="flex flex-wrap items-center justify-center gap-6 mt-6 text-sm text-slate-500">
           <span className="flex items-center gap-2">
-            <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
+            <CheckCircle2 className="w-4 h-4 text-green-500" />
             100% free
           </span>
           <span className="flex items-center gap-2">
-            <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
+            <CheckCircle2 className="w-4 h-4 text-green-500" />
             No credit card
           </span>
           <span className="flex items-center gap-2">
-            <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-            </svg>
+            <CheckCircle2 className="w-4 h-4 text-green-500" />
             Manual audit
           </span>
         </div>
       </section>
 
-      {/* FAQ Section - Modern Accordion */}
-      <section className="max-w-2xl mx-auto px-6 pb-24">
+      {/* FAQ Section */}
+      <section className="relative max-w-2xl mx-auto px-6 pb-24">
         <h3 className="text-3xl font-bold mb-10 text-center bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">
           Frequently Asked Questions
         </h3>
@@ -180,7 +192,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="border-t border-white/10 bg-white/5 py-8 text-center text-sm text-slate-500">
+      <footer className="relative border-t border-white/10 bg-slate-950/80 py-8 text-center text-sm text-slate-500">
         © {new Date().getFullYear()} Cited. Built for Shopify DTC brands.
       </footer>
     </main>
