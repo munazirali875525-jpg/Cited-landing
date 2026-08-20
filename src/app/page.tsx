@@ -4,16 +4,16 @@ import { useState } from "react";
 export default function Home() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
-  const faqs = [
+    const faqs = [
     {
-      question: "Why is this 100% free?",
+      question: "What's the catch?",
       answer:
-        "I'm building the automated version of Cited. I need 5 solid case studies to prove it works. You get a free audit; I get a testimonial.",
+        "AI visibility is an emerging channel most brands are ignoring. I offer 5 free audits weekly to demonstrate the opportunity cost. You get a detailed report showing exactly where you're losing AI-driven traffic. No strings attached.",
     },
     {
       question: "How is this different from my current SEO?",
       answer:
-        "SEO optimizes for Google's crawlers. AI search (Perplexity, ChatGPT) uses Large Language Models. If your brand isn't in their training data or cited in their sources, you don't exist to them.",
+        "SEO helps you rank on Google. But AI search engines like Perplexity and ChatGPT don't use Google's algorithm. They use LLMs (Large Language Models) that synthesize answers from training data. If your brand isn't mentioned in the sources they cite, you're invisible - even if you rank #1 on Google.",
     },
     {
       question: "What if my brand is already visible?",
