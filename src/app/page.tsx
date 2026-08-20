@@ -48,7 +48,7 @@ export default function Home() {
       {/* Hero Section */}
       <section className="max-w-6xl mx-auto px-6 pt-20 pb-16 text-center">
         
-              {/* Badge */}
+        {/* Badge */}
         <div className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-xs font-semibold tracking-wide text-neutral-600 uppercase bg-white border border-neutral-200 rounded-full shadow-sm">
           <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
           Accepting 5 Shopify brands this week
@@ -114,14 +114,30 @@ export default function Home() {
         <div className="bg-white rounded-3xl border border-neutral-200 shadow-2xl shadow-black/5 overflow-hidden">
           <div className="p-8 md:p-12 text-center border-b border-neutral-100">
             <h3 className="text-2xl md:text-3xl font-bold mb-3 text-neutral-900">Get your custom AI Visibility Report</h3>
-            <p className="text-neutral-600">I'll send your personalized audit within 24 hours.</p>
+            <p className="text-neutral-600 mb-6">I'll send your personalized audit report within 24 hours.</p>
+            
+            <div className="text-left max-w-md mx-auto space-y-3">
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-black mt-0.5 flex-shrink-0" />
+                <p className="text-sm text-neutral-700"><strong>AI Search Screenshots:</strong> See exactly how Perplexity, ChatGPT, Claude & Gemini respond to your brand.</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-black mt-0.5 flex-shrink-0" />
+                <p className="text-sm text-neutral-700"><strong>Competitor Gap:</strong> The exact queries where AI recommends rivals instead of you.</p>
+              </div>
+              <div className="flex items-start gap-3">
+                <CheckCircle2 className="w-5 h-5 text-black mt-0.5 flex-shrink-0" />
+                <p className="text-sm text-neutral-700"><strong>3-Step Action Plan:</strong> Exact fixes to implement this week to reclaim traffic.</p>
+              </div>
+            </div>
           </div>
-          <div className="p-4 md:p-6 bg-neutral-50">
+          
+          <div className="p-2">
             <iframe
-              src="https://tally.so/embed/1AQvzb?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+              src="https://tally.so/embed/1AQvzb?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&hideFooter=1"
               loading="lazy"
               width="100%"
-              height="462"
+              height="550"
               frameBorder="0"
               marginHeight={0}
               marginWidth={0}
@@ -131,19 +147,20 @@ export default function Home() {
           </div>
         </div>
         
-                  <div className="p-2">
-            <iframe
-              src="https://tally.so/embed/1AQvzb?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-              loading="lazy"
-              width="100%"
-              height="480"
-              frameBorder="0"
-              marginHeight={0}
-              marginWidth={0}
-              title="Get Your Free AI Visibility Audit"
-              className="rounded-xl bg-white"
-            />
-          </div>
+        <div className="flex flex-wrap items-center justify-center gap-8 mt-8 text-sm font-medium text-neutral-500">
+          <span className="flex items-center gap-2">
+            <CheckCircle2 className="w-4 h-4 text-green-600" />
+            100% free
+          </span>
+          <span className="flex items-center gap-2">
+            <CheckCircle2 className="w-4 h-4 text-green-600" />
+            No credit card
+          </span>
+          <span className="flex items-center gap-2">
+            <CheckCircle2 className="w-4 h-4 text-green-600" />
+            Manual audit
+          </span>
+        </div>
       </section>
 
       {/* FAQ Section */}
