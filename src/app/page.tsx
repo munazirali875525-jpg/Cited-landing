@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { Bot, Target, Zap, ArrowRight, CheckCircle2, Plus } from "lucide-react";
+import { Bot, Target, Zap, ArrowRight, CheckCircle2, Plus, FileText, Mail, TrendingUp } from "lucide-react";
 
 export default function Home() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -66,14 +66,25 @@ export default function Home() {
           Most Shopify brands lose 20-40% of potential traffic to AI search. We run your brand through 4 AI engines and deliver a custom report with 3 exact fixes.
         </p>
 
-        {/* CTA Button */}
+        {/* CTA Button - Desktop */}
         <button
           onClick={scrollToForm}
-          className="inline-flex items-center gap-2 px-8 py-4 bg-black hover:bg-neutral-800 text-white font-semibold rounded-full shadow-xl shadow-black/10 transition-all duration-300 hover:scale-105 mb-20"
+          className="hidden md:inline-flex items-center gap-2 px-8 py-4 bg-black hover:bg-neutral-800 text-white font-semibold rounded-full shadow-xl shadow-black/10 transition-all duration-300 hover:scale-105 mb-16"
         >
           Get my free audit
           <ArrowRight className="w-4 h-4" />
         </button>
+
+        {/* Mobile CTA - Always Visible */}
+        <div className="md:hidden mb-12">
+          <button
+            onClick={scrollToForm}
+            className="w-full inline-flex items-center justify-center gap-2 px-8 py-4 bg-black hover:bg-neutral-800 text-white font-semibold rounded-full shadow-xl shadow-black/10 transition-all duration-300"
+          >
+            Get my free audit
+            <ArrowRight className="w-4 h-4" />
+          </button>
+        </div>
 
         {/* Value Props */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto text-left">
@@ -109,12 +120,63 @@ export default function Home() {
         </div>
       </section>
 
+      {/* What's Inside Section - NEW */}
+      <section className="max-w-4xl mx-auto px-6 pb-16">
+        <div className="bg-blue-50 border border-blue-200 rounded-3xl p-8 md:p-12">
+          <h3 className="text-2xl font-bold text-center mb-8 text-neutral-900">What's inside your audit?</h3>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="flex flex-col items-center text-center">
+              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-4 shadow-sm">
+                <FileText className="w-8 h-8 text-blue-600" />
+              </div>
+              <h4 className="font-bold mb-2 text-neutral-900">AI Search Screenshots</h4>
+              <p className="text-sm text-neutral-600">See exactly how Perplexity, ChatGPT, Claude & Gemini respond to your brand</p>
+            </div>
+            <div className="flex flex-col items-center text-center">
+              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-4 shadow-sm">
+                <TrendingUp className="w-8 h-8 text-blue-600" />
+              </div>
+              <h4 className="font-bold mb-2 text-neutral-900">Competitor Gap</h4>
+              <p className="text-sm text-neutral-600">The exact queries where AI recommends rivals instead of you</p>
+            </div>
+            <div className="flex flex-col items-center text-center">
+              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mb-4 shadow-sm">
+                <Mail className="w-8 h-8 text-blue-600" />
+              </div>
+              <h4 className="font-bold mb-2 text-neutral-900">3-Step Action Plan</h4>
+              <p className="text-sm text-neutral-600">Exact fixes to implement this week to reclaim your traffic</p>
+            </div>
+          </div>
+          <div className="mt-6 text-center">
+            <p className="text-sm text-neutral-600">
+          Delivered as a <strong>custom report</strong> within <strong>24 hours</strong>
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* Form Section */}
       <section id="audit-form" className="max-w-2xl mx-auto px-6 py-20">
+        {/* Trust Signals - Moved Above Form */}
+        <div className="flex flex-wrap items-center justify-center gap-8 mb-8 text-sm font-medium text-neutral-600">
+          <span className="flex items-center gap-2">
+            <CheckCircle2 className="w-4 h-4 text-green-600" />
+            100% free
+          </span>
+          <span className="flex items-center gap-2">
+            <CheckCircle2 className="w-4 h-4 text-green-600" />
+            No credit card
+          </span>
+          <span className="flex items-center gap-2">
+            <CheckCircle2 className="w-4 h-4 text-green-600" />
+            Expert-reviewed
+          </span>
+        </div>
+
         <div className="bg-white rounded-3xl border border-neutral-200 shadow-2xl shadow-black/5 overflow-hidden">
           <div className="p-8 md:p-12 text-center border-b border-neutral-100">
             <h3 className="text-2xl md:text-3xl font-bold mb-3 text-neutral-900">Get your custom AI Visibility Report</h3>
-            <p className="text-neutral-600">AI-powered analysis, expert-reviewed within 24 hours.</p>
+            <p className="text-neutral-600">AI-powered analysis, expert-reviewed within 24 hours. <span className="text-red-600 font-semibold">Only 3 spots left this week.</span></p>
           </div>
           
           <div className="p-2">
@@ -130,21 +192,6 @@ export default function Home() {
               className="rounded-xl bg-white"
             />
           </div>
-        </div>
-        
-        <div className="flex flex-wrap items-center justify-center gap-8 mt-8 text-sm font-medium text-neutral-500">
-          <span className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-green-600" />
-            100% free
-          </span>
-          <span className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-green-600" />
-            No credit card
-          </span>
-          <span className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-green-600" />
-            Expert-reviewed
-          </span>
         </div>
       </section>
 
@@ -166,7 +213,7 @@ export default function Home() {
                 <span className="font-semibold text-neutral-900 text-lg">
                   {faq.question}
                 </span>
-                <Plus className={`w-5 h-5 text-neutral-400 transition-transform duration-300 ${openIndex === index ? 'rotate-45' : ''}`} />
+                <Plus className={`w-6 h-6 text-neutral-600 transition-transform duration-300 ${openIndex === index ? 'rotate-45' : ''}`} />
               </button>
               {openIndex === index && (
                 <div className="px-6 pb-6 text-neutral-600 leading-relaxed border-t border-neutral-100 pt-4">
