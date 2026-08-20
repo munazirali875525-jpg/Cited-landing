@@ -116,23 +116,7 @@ export default function Home() {
             <h3 className="text-2xl md:text-3xl font-bold mb-3 text-neutral-900">Get your custom AI Visibility Report</h3>
             <p className="text-neutral-600 mb-6">I'll send your personalized audit report within 24 hours.</p>
             
-            <div className="text-left max-w-md mx-auto space-y-3">
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-black mt-0.5 flex-shrink-0" />
-                <p className="text-sm text-neutral-700"><strong>AI Search Screenshots:</strong> See exactly how Perplexity, ChatGPT, Claude & Gemini respond to your brand.</p>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-black mt-0.5 flex-shrink-0" />
-                <p className="text-sm text-neutral-700"><strong>Competitor Gap:</strong> The exact queries where AI recommends rivals instead of you.</p>
-              </div>
-              <div className="flex items-start gap-3">
-                <CheckCircle2 className="w-5 h-5 text-black mt-0.5 flex-shrink-0" />
-                <p className="text-sm text-neutral-700"><strong>3-Step Action Plan:</strong> Exact fixes to implement this week to reclaim traffic.</p>
-              </div>
-            </div>
-          </div>
-          
-          <div className="p-2">
+            
             <iframe
               src="https://tally.so/embed/1AQvzb?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1&hideFooter=1"
               loading="lazy"
