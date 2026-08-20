@@ -48,10 +48,10 @@ export default function Home() {
       {/* Hero Section */}
       <section className="max-w-6xl mx-auto px-6 pt-20 pb-16 text-center">
         
-        {/* Badge */}
+              {/* Badge */}
         <div className="inline-flex items-center gap-2 px-3 py-1 mb-8 text-xs font-semibold tracking-wide text-neutral-600 uppercase bg-white border border-neutral-200 rounded-full shadow-sm">
-          <span className="w-1.5 h-1.5 rounded-full bg-red-500 animate-pulse"></span>
-          Only 5 free audits left this week
+          <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></span>
+          Accepting 5 Shopify brands this week
         </div>
 
         {/* Headline */}
@@ -131,20 +131,19 @@ export default function Home() {
           </div>
         </div>
         
-        <div className="flex flex-wrap items-center justify-center gap-8 mt-8 text-sm font-medium text-neutral-500">
-          <span className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-green-600" />
-            100% free
-          </span>
-          <span className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-green-600" />
-            No credit card
-          </span>
-          <span className="flex items-center gap-2">
-            <CheckCircle2 className="w-4 h-4 text-green-600" />
-            Manual audit
-          </span>
-        </div>
+                  <div className="p-2">
+            <iframe
+              src="https://tally.so/embed/1AQvzb?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+              loading="lazy"
+              width="100%"
+              height="480"
+              frameBorder="0"
+              marginHeight={0}
+              marginWidth={0}
+              title="Get Your Free AI Visibility Audit"
+              className="rounded-xl bg-white"
+            />
+          </div>
       </section>
 
       {/* FAQ Section */}
