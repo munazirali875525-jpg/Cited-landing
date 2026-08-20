@@ -176,7 +176,7 @@ export default function Home() {
         <div className="bg-white rounded-3xl border border-neutral-200 shadow-2xl shadow-black/5 overflow-hidden">
           <div className="p-8 md:p-12 text-center border-b border-neutral-100">
             <h3 className="text-2xl md:text-3xl font-bold mb-3 text-neutral-900">Get your custom AI Visibility Report</h3>
-            <p className="text-neutral-600">AI-powered analysis, expert-reviewed within 24 hours. <span className="text-red-600 font-semibold">Only 3 spots left this week.</span></p>
+         <p className="text-neutral-600">AI-powered analysis, expert-reviewed within 24 hours.</p>
           </div>
           
           <div className="p-2">
